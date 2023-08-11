@@ -1,0 +1,34 @@
+server:
+  port: 8091
+
+spring:
+  datasource:
+    name: cattle_lihao
+    url: jdbc:mysql://127.0.0.1:3306/cattle_lihao
+    username: root
+    #password: abc=1234
+    password: root123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+    redis:
+      host: 127.0.0.1
+      port: 6379
+
+    devtools:
+      restart:
+        enable: true
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.cattle.lihao.bean
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+
+
+profile:
+  development: true
